@@ -19,7 +19,7 @@ app.get("/",(req,res)=>{
 
 app.post("/",(req,res)=>{
     // console.log(req.body)
-    res.send("Hello Students");
+    res.send("Hello Students"); //send, json, status
 })
 
 app.listen(3000,()=>console.log("server is running on port 3000"));
