@@ -9,14 +9,14 @@ const {
 const router=express.Router()
 
 ///Read Operation
-router.get("/",getEmployees)
+router.get("/employees",getEmployees)
 ///employee get by their id
-router.get("/:id",getEmployeeById)
+router.get("/employees/:id",getEmployeeById)
 //Create
-router.post("/",addEmployee)
+router.post("employees",addEmployee)
 //update
-router.put("/:id",updateEmployee)
+router.put("/employees/:id",updateEmployee)
 //delete
-router.delete("/:id",deleteEmployee)
+router.delete("/employees/:id",deleteEmployee)
 
 module.exports=router
