@@ -40,3 +40,36 @@ use("HospitalDB")
 //         department:"Neurology",
 //     }
 // ])
+
+
+///Read Operation  1. find()  2. findOne()
+// db.doctors.find()
+// db.doctors.findOne()
+// db.doctors.find({name: "Dr. Abhijeet"})
+// db.doctors.find({department: "Cardiology"})
+
+
+//update operation 1. updateOne()  2. updateMany()
+// db.doctors.updateOne(
+//     {name: "Dr. John"},
+//     {
+//         $set:{
+//             fees: 1500,
+//             experience: 15
+//         }
+//     }
+// )
+
+// db.doctors.updateMany(
+//     {name: "Dr. Rakesh"},
+//     {
+//         $set:{
+//             fees: 1400,
+//             experience: 12
+//         }
+//     }
+// )
+
+//Delete operation 1. deleteOne()  2. deleteMany()
+
+db.doctors.deleteOne({name: "Dr. Rakesh"})

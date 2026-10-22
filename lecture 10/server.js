@@ -13,6 +13,7 @@ const employees=[
 
 ]
 
+
 ///Read Operation
 app.get("/employees",(req,res)=>{
     res.json(employees)
@@ -43,9 +44,9 @@ app.put("/employees/:id",(req,res)=>{
     if(!result){
         res.status(404).json({success:false, message:"employee not found"});
     }
-    result.name=employee.name;
-    result.salary=employee.salary;
-    result.department=employee.department;
+    result.name=employee.name??result.name;
+    result.salary=employee.salary??result.salary;
+    result.department=employee.department??result.department;
     res.json({success:true,employee});
 })
 
