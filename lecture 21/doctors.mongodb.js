@@ -72,4 +72,40 @@ use("HospitalDB")
 
 //Delete operation 1. deleteOne()  2. deleteMany()
 
-db.doctors.deleteOne({name: "Dr. Rakesh"})
+// db.doctors.deleteOne({name: "Dr. Rakesh"})
+
+
+// db.doctors.find(
+//     {
+//         fees:{
+//             $gte: 1000
+//         }
+//     }
+// )
+
+// db.doctors.find(
+//     {
+//         department: "Cardiology",
+//         fees: {
+//             $gte: 1000
+//         }
+//     }
+// )
+
+// db.doctors.find(
+//     {
+//         $or:[
+//             {department: "Cardiology"},
+//             {fees: {$gte: 1000}}
+//         ]
+//     }
+// )
+
+
+// db.doctors.find({},{name:1,department:1,_id:0})
+
+// db.doctors.find().limit(2)
+// db.doctors.find().skip(2).limit(2)
+
+// db.doctors.find().sort({fees:-1})  //ascending order
+
