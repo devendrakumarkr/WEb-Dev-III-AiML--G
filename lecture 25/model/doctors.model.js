@@ -26,6 +26,6 @@ const doctorSchema = new Schema({
         type: String,
         required: true
     }
-});
+},{timestamps: true});
 
 module.exports = mongoose.model('doctors', doctorSchema);
