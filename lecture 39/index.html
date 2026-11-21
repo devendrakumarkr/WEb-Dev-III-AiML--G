@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+    <h1>Chat App</h1>
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button id="sendButton" onclick="sendmessage()">Send</button>
+    <ul id="chatContainer"></ul>
+    <script>
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+        const chatContainer = document.getElementById('chatContainer');
+
+        const ws=new WebSocket('ws://localhost:3000');
+
+        ws.onopen=function(){
+            console.log('Connected to the server');
+        };
+
+        ws.onmessage=function(event){
+            const message=event.data;
+            const li=document.createElement('li');
+            li.textContent=message;
+            chatContainer.appendChild(li);
+        };
+
+        const sendMessage=function(){
+            const message=userInput.value;
+            if(message){
+                ws.send(message);
+                userInput.value='';
+            }
+        };
+
+        
+    </script>
+</body>
+</html>
